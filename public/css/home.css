@@ -1,0 +1,169 @@
+main{
+  float: right;
+  width: 87%;
+  height: auto;
+  margin-top: 90px;
+}
+
+main .search{
+  top: 0;
+  margin-right: 40px;
+  float: right;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
+}
+main .search input{
+  border: none;
+  outline: none;
+  width: 300px;
+  padding-left: 30px;
+  font-size: 16px;
+}
+main .search  button{
+  border: none;
+  background: white;
+  outline: none;
+  width: 70px;
+  border-left: 2px solid black;
+
+}
+main .search  button i{
+  font-size: 20px;
+  background: white;
+}
+
+
+
+main .table{
+  width: 100%;
+  padding: 20px;
+}
+main .table table {
+  width: 98%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+main .table table td, th {
+  border: 2px solid #333333;
+  text-align: left;
+  padding: 8px;
+}
+main .table table  th{
+  text-align: center;
+}
+main .table table td:nth-child(1){
+  text-align: left;
+}
+main .table table td{
+  text-align: center;
+}
+main .table table td i{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+main .table table td i:active{
+  color: rgb(190, 65, 65);
+}
+
+
+.update_container{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.205);
+  z-index: 0;
+  display: none;
+  padding-top: 90px;
+}
+
+.update_container .update{
+  position: relative;
+  width: 50%;
+  background: white;
+  margin: auto;
+  padding: 50px;
+  transition:top 2s;
+  animation: update 1s;
+}
+
+@keyframes update{
+  from{
+    top: -100%;
+  }to{
+    top: 0;
+  }
+}
+
+.update_container .update p{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+}
+.update_container .update .flex_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.update_container .update .flex_container .flex{
+  width: 50%;
+  height: auto;
+  padding: 10px;
+}
+.update_container .update .flex_container .flex label{
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.update_container .update .flex_container  .flex input[type=text],select{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.update_container .update .flex_container  .flex .time{
+  width: 100%;
+  display: flex;
+}
+.update_container .update .flex_container  .flex .time label{
+  width: 100%;
+}
+
+.update_container .update .flex_container  .flex .time label:first-child{
+  margin-right: 10px;
+}
+
+.update_container .update .flex_container  .flex .time label input{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 15px;
+  padding: 4px;
+}
+
+.update_container .update  input[type=submit]{
+  width: 100%;
+  font-size: 17px;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+  background: orangered;
+  border: none;
+  outline: none;
+  margin-bottom: 50px;
+}
+.update_container .update  span{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}

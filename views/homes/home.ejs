@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/all.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+    <%- include('../nav'); %>
+    <main>
+      <div class="search">
+        <form action="/" method="GET">
+          <label for="search"></label>
+          <input type="text" name="search" placeholder="search..." required>
+          <button type="submit"><i class='fas fa-search'></i></button>
+        </form>
+      </div>
+
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                      <th>HỌ VÀ TÊN</th>
+                      <th>PHONE</th>
+                      <th>THÒI GIAN</th>
+                      <th>LỊCH MƯỢN</th>
+                      <th>SÂN SỐ</th>
+                      <th>kÍCH HOẠT</th>
+                      <th>CHỈNH SỬA</th>
+                      <th>HỦY</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(var i=0; i < data.length; i++) { %>
+                      <tr>
+                        <td><%= data[i].username %></td>
+                        <td><%= data[i].phone %></td>
+                        <th><%= data[i].time %></th>
+                        <td><%= data[i].date.split("-").reverse().join("/") %></td>
+                        <td>0<%= data[i].chonsan %></td>
+                        <td ><i class='fas fa-caret-square-right'></i></td>
+                        <td ><i onclick="updateData('<%=data[i]._id%>')" class='fas fa-edit'></i></td>
+                        <td ><i onclick="deleteData('<%=data[i]._id%>')" class='far fa-trash-alt'></i></td>
+                      </tr>
+                   <% } %>
+                  </tbody>
+            </table>
+        </div>
+    </main>
+    <div class="update_container">
+          <div class="update">
+          <span onclick="closeUpdate()">&times;</span>
+          <p>UPDATE</p>
+          <form id="form_update"  method="POST">
+               <div class="flex_container">
+                    <div class="flex">
+                         <label for="username">Họ và tên:</label>
+                         <input name="username" type="text" placeholder="họ và tên..." required>
+                         <label for="phone">SĐT:</label>
+                         <input name="phone" type="text" placeholder="phone" required>
+                    </div>
+                    <div class="flex">
+                    <div class="time">
+                        <label for="time">Thời gian:
+                              <input id="thoigian" name="time" type="time" required><br/>
+                        </label><br/>
+                        <label for="date">Tháng/ngày/năm:
+                              <input id="date" name="date" type="date"  placeholder="date of bird" required><br/>
+                        </label><br/>
+                    </div>
+                    <label for="chonsan">Chọn sân:</label>
+                    <select name="chonsan" id="" required>
+                              <option value=1>01</option>
+                              <option value=2>02</option>
+                              <option value=3>03</option>
+                              <option value=4>04</option>
+                    </select><br/>
+                    </div>
+               </div>
+               <input type="submit" value="UPDATE">
+          </form>
+          </div>
+    </div>
+</body>
+<script src="/static/js/update.js"></script>
+<script src="/static/js/delete.js"></script>
+
+</html>
+
+
+<!-- .split("-").reverse().join("/") -->
