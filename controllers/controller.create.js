@@ -1,23 +1,23 @@
 
-const database=require("../models/database")
+const Booking=require("../models/Booking")
 
 let create={
      get:function(req,res){
           res.render('create',{
                title:"Đặt sân bóng"
-          });
+          })
      },
-     post:function(req,res){
-          let dulieu=req.body;
-          database.find({date:dulieu.date,chonsan:dulieu.chonsan,time:dulieu.time}).select(['time','date','chonsan'])
+     post:async function(req,res){
+          let dulieu=req.body
+          await Booking.find({date:dulieu.date,chonsan:dulieu.chonsan,time:dulieu.time}).select(['time','date','chonsan'])
           .exec((err,result)=>{
                if(err){
                     req.flash('error','xin loi data tam thoi khong load dc')
                     res.redirect('/')
                }else{
                     if(result==0){
-                        const data=new database({
-                             username:dulieu.username,
+                         new Booking({
+                             name:dulieu.name,
                              phone:dulieu.phone,
                              time:dulieu.time,
                              date:dulieu.date,
@@ -41,4 +41,4 @@ let create={
 }
 
 
-module.exports=create;
+module.exports=create

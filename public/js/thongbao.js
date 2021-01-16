@@ -1,21 +1,21 @@
 
-function xulithongbao(elem,backgr,op,di){
-     elem.style.background=backgr;
-     elem.style.opacity=op;
-     elem.style.display=di;
+function xuLiThongBao(element,background,opacity,display){
+     element.style.background=background
+     element.style.opacity=opacity
+     element.style.display=display
 }
 
 if(document.getElementById("messages")){
-     let a= document.getElementById("messages");
-     if(a.querySelector("ul").className=="success"){
-          xulithongbao(a,"green","1","block");
+     let messages= document.getElementById("messages")
+     if(messages.querySelector("ul").className==="success"){
+          xuLiThongBao(messages,"green","1","block")
           setTimeout(()=>{
-               xulithongbao(a,"green","0","none");
-          },5000);
+               xuLiThongBao(messages,"green","0","none")
+          },5000)
      }else{
-          xulithongbao(a,"red","1","block");
+          xuLiThongBao(messages,"red","1","block")
           setTimeout(()=>{
-               xulithongbao(a,"red","0","none");
-          },5000);
+               xuLiThongBao(messages,"red","0","none")
+          },5000)
      }
 }

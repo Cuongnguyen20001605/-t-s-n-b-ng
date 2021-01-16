@@ -1,8 +1,11 @@
+
+require('dotenv').config()
+
 const config={
-    PORT:process.env.PORT||3000,
-    PATH:{
-        admin:"/admin/fanpage",
-    },
+    PORT:process.env.PORT,
+    DATABASE:{
+        PORT:process.env.URI
+    }
 }
 
 module.exports=config

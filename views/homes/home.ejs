@@ -37,14 +37,14 @@
                   <tbody>
                     <% for(var i=0; i < data.length; i++) { %>
                       <tr>
-                        <td><%= data[i].username %></td>
+                        <td><%= data[i].name %></td>
                         <td><%= data[i].phone %></td>
                         <th><%= data[i].time %></th>
                         <td><%= data[i].date.split("-").reverse().join("/") %></td>
                         <td>0<%= data[i].chonsan %></td>
                         <td ><i class='fas fa-caret-square-right'></i></td>
                         <td ><i onclick="updateData('<%=data[i]._id%>')" class='fas fa-edit'></i></td>
-                        <td ><i onclick="deleteData('<%=data[i]._id%>')" class='far fa-trash-alt'></i></td>
+                        <td ><i onclick="deteleBooking('<%=data[i]._id%>')" class='far fa-trash-alt'></i></td>
                       </tr>
                    <% } %>
                   </tbody>
@@ -58,8 +58,8 @@
           <form id="form_update"  method="POST">
                <div class="flex_container">
                     <div class="flex">
-                         <label for="username">Họ và tên:</label>
-                         <input name="username" type="text" placeholder="họ và tên..." required>
+                         <label for="name">Họ và tên:</label>
+                         <input name="name" type="text" placeholder="họ và tên..." required>
                          <label for="phone">SĐT:</label>
                          <input name="phone" type="text" placeholder="phone" required>
                     </div>
@@ -86,7 +86,7 @@
           </div>
     </div>
 </body>
-<script src="/static/js/update.js"></script>
+<script src="/static/js/updateBooking.js"></script>
 <script src="/static/js/delete.js"></script>
 
 </html>

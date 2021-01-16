@@ -1,6 +1,7 @@
-async function deleteData(data){
-     await fetch("/delete?id="+data,{method:"DELETE"})
+async function deteleBooking(_id){
+     await fetch("/delete?id="+_id,{method:"DELETE"})
           .then(text=>{
-               location.reload();
-          });
+               location.reload()
+          }
+     )
 }

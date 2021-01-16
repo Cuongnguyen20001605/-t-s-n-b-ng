@@ -1,7 +1,7 @@
-const mongoose=require("mongoose");
+const mongoose=require("mongoose")
 
-let history=mongoose.Schema({
-     username:{
+let schemaBooking=new mongoose.Schema({
+     name:{
           type:String,
           require:true
      },
@@ -9,16 +9,20 @@ let history=mongoose.Schema({
           type:String,
           require:true
      },
+     time:{
+          type:String,
+          require:true
+     },
      date:{
           type:String,
           require:true
      },
-     sanbong:{
+     chonsan:{
           type:Number,
           require:true
      }
 });
 
-const data=mongoose.model("History",history);
+const Booking=mongoose.model("Booking",schemaBooking)
 
-module.exports=data;
+module.exports=Booking
