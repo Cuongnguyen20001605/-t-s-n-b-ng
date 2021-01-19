@@ -19,7 +19,6 @@ form p{
      color:rgb(2, 85, 2);
      font-weight: 600;
      border-bottom: 1px solid rgb(2, 85, 2);
-
 }
 form .form_container{
      display: flex;
@@ -59,15 +58,65 @@ form  input[type=submit]{
 }
 
 form .form_container  .form-content .time{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+form .form_container  .form-content .time .clock{
+     width: 100%;
+     margin-right: 10px;
+}
+form .form_container  .form-content .time .clock .borderClock{
      position: relative;
      width: 100%;
      display: flex;
      justify-content: center;
+     align-items: center;
+     border: 1px solid black;
+     height: 37px;
+     padding-right: 5px;
+     margin-top: 20px;
+     margin-bottom: 20px;
 }
 
-form .form_container  .form-content .time label:first-child{
-     margin-right: 10px;
+form .form_container  .form-content .time .clock  .borderClock input[name="time"]{
+     outline: none;
+     border: none;
 }
+form .form_container  .form-content .time .clock .borderClock ul{
+     position: absolute;
+     top: 15px;
+     background: white;
+     right: 0;
+     margin-top: 20px;
+     overflow: auto;
+     height: 100px;
+     box-shadow: 1px 1px 10px rgb(110, 110, 110);
+     border-radius: 2px;
+     border: 1px solid rgb(138, 138, 138);
+     width: 100%;
+     -ms-overflow-style: none;
+     display: none;
+}
+
+form .form_container  .form-content .time .clock ul::-webkit-scrollbar {
+     display: none;
+}
+form .form_container  .form-content .time .clock ul li{
+     font-size: 15px;
+     cursor: pointer;
+     padding: 5px 10px;
+}
+form .form_container  .form-content .time .clock ul li:hover{
+     background: rgb(158, 192, 255);
+}
+
+form .form_container  .form-content .time .clock  .borderClock .open{
+     cursor: pointer;
+}
+
 
 form .form_container  .form-content .time input{
      margin-top: 20px;
@@ -75,5 +124,4 @@ form .form_container  .form-content .time input{
      width: 100%;
      font-size: 15px;
      padding: 4px;
-     width: 100%;
 }

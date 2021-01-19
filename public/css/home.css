@@ -130,7 +130,70 @@ main .table table td i:active{
 .update_container .update .flex_container  .flex .time{
   width: 100%;
   display: flex;
+  justify-content: center;
 }
+
+.update_container .update .flex_container  .flex  .time .clock{
+  width: 100%;
+  margin-right: 5px;
+}
+
+.update_container .update .flex_container  .flex  .time .clock .borderClock{
+     position: relative;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 1px solid black;
+     height: 37px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+
+.update_container .update .flex_container  .flex  .time .clock  .borderClock input[name="time"]{
+  outline: none;
+  border:none;
+  padding: 5px;
+  margin: 0;
+}
+
+.update_container .update .flex_container  .flex  .time .clock  .borderClock .open{
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  padding: 0;
+}
+
+
+.update_container .update .flex_container  .flex  .time .clock .borderClock ul{
+     position: absolute;
+     top: 15px;
+     background: white;
+     right: 0;
+     margin-top: 20px;
+     overflow: auto;
+     height: 100px;
+     box-shadow: 1px 1px 10px rgb(110, 110, 110);
+     border-radius: 2px;
+     border: 1px solid rgb(138, 138, 138);
+     width: 100%;
+     -ms-overflow-style: none;
+     display: none;
+}
+
+.update_container .update .flex_container  .flex  .time .clock ul::-webkit-scrollbar {
+     display: none;
+}
+.update_container .update .flex_container  .flex  .time .clock ul li{
+     font-size: 15px;
+     cursor: pointer;
+     padding: 5px 10px;
+}
+.update_container .update .flex_container  .flex  .time .clock ul li:hover{
+     background: rgb(158, 192, 255);
+}
+
+
 .update_container .update .flex_container  .flex .time label{
   width: 100%;
 }

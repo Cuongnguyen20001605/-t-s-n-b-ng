@@ -9,7 +9,7 @@ let create={
      },
      post:async function(req,res){
           let dulieu=req.body
-          await Booking.find({date:dulieu.date,chonsan:dulieu.chonsan,time:dulieu.time}).select(['time','date','chonsan'])
+          await Booking.find({date:dulieu.date,chonsan:dulieu.chonsan,time:dulieu.time})
           .exec((err,result)=>{
                if(err){
                     req.flash('error','xin loi data tam thoi khong load dc')

@@ -23,7 +23,7 @@ module.exports={
                     req.flash("error","xin lỗi chưa lấy được dữ liệu")
                     res.redirect('/')
               }else{
-                   if(result===0){
+                   if(result==0){
                         Booking.updateOne({
                              _id:req.query.id},{
                               name:req.body.name,

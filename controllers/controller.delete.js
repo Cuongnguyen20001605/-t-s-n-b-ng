@@ -11,13 +11,12 @@ module.exports ={
                          if(err){
                               req.flash('error','xin lỗi chưa thể xóa được dữ liệu mời lm lại')
                               res.redirect('/')
-                         }else{
-                              res.send("success","đã xóa thành công")
                          }
+                         res.status(200).json({success:"đã xóa thành công"})
                     })
                }
           })
-      }
+     }
 }
 
 

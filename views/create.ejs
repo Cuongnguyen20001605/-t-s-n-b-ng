@@ -7,6 +7,7 @@
      <link rel="stylesheet" href="static/css/nav.css">
      <link rel="stylesheet" href="static/css/create.css">
      <link rel="stylesheet" href="static/css/all.css">
+     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
      <%- include('nav'); %>
@@ -22,9 +23,27 @@
                     </div>
                     <div class="form-content">
                          <div class="time">
-                              <label for="time">Thời gian:
-                                   <input id="thoigian" name="time" type="time" required><br/>
-                              </label><br/>
+                              <div class="clock">
+                                   <label for="time">Thời gian:</label>
+                                   <div class="borderClock">
+                                        <input type="text" name="time" placeholder="00:00">
+                                        <span class="open" onclick="openTime()"><i class='far fa-clock'></i></span>
+                                        <ul class="TimePermanent">
+                                             <li>6:00</li>
+                                             <li>7:30</li>
+                                             <li>9:00</li>
+                                             <li>10:30</li>
+                                             <li>12:00</li>
+                                             <li>13:30</li>
+                                             <li>15:00</li>
+                                             <li>16:30</li>
+                                             <li>18:00</li>
+                                             <li>19:30</li>
+                                             <li>21:00</li>
+                                             <li>22:30</li>
+                                        </ul>
+                                   </div>
+                              </div>
                               <label for="date">Tháng/ngày/năm:
                                    <input id="date" name="date" type="date"  placeholder="date of bird" required><br/>
                               </label><br/>

@@ -48,3 +48,23 @@ let year=dateNow.getFullYear()
 let minDate=year+"-"+month+"-"+date
 
 updateDate.setAttribute("min",minDate)
+
+
+const ul=document.querySelector(".TimePermanent")
+const li=ul.querySelectorAll("li")
+const inputTime=document.querySelector("input[name=time]")
+function openTime(){
+     ul.style.display="block"
+}
+
+for(let i=0;i<li.length;i++){
+     li[i].onclick=function(){
+          inputTime.value=li[i].innerText
+           ul.style.display="none"
+     }
+}
+
+
+
+
+
