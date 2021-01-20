@@ -7,17 +7,17 @@ const startTiming=document.querySelectorAll(".startTiming")
 const updateDate=document.querySelector("#date")
 
 function hienThiData(updateData){
-     formUpdate.action="/update?id="+updateData._id;
+     formUpdate.action="/update?id="+updateData._id
      formUpdate.querySelector("input[name=name]").value=updateData.name
      formUpdate.querySelector("input[name=phone]").value=updateData.phone
      formUpdate.querySelector("input[name=time]").value=updateData.time
      formUpdate.querySelector("input[name=date]").value=updateData.date
-     let a=formUpdate.querySelector("select")
-     for(let i=0;i<a.length;i++){
-          if(a[i].value===updateData.chonsan){
-               a[i].setAttribute("selected","selected")
+     let option=formUpdate.querySelector("select")
+     for(let i=0;i<option.length;i++){
+          if(option[i].value==updateData.chonsan){
+               option[i].setAttribute("selected","selected")
           }else{
-               a[i].removeAttribute("selected")
+               option[i].removeAttribute("selected")
           }
      }
 }

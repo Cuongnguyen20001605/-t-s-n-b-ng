@@ -20,7 +20,7 @@ module.exports={
         }else if(isNaN(search)){
             if(isNaN(search[0])){
                 let a=new RegExp(search,"i")
-                Booking.find({name:{$regex:a}}).sort({date:-1},(err,result)=>{
+                Booking.find({name:{$regex:a}}).sort({date:-1}).exec((err,result)=>{
                     if(err){
                         errorConnect()
                     }else{
@@ -39,7 +39,7 @@ module.exports={
                 if(bool===true){
                     let value=search.split(char).reverse().join("-")
                     let a=new RegExp(value,"i")
-                    Booking.find({date:{$regex:a}}).sort({date:-1},(err,result)=>{
+                    Booking.find({date:{$regex:a}}).sort({date:-1}).exec((err,result)=>{
                         if(err){
                             errorConnect()
                         }else{
@@ -49,7 +49,7 @@ module.exports={
                 }
                 if(bool===false){
                     let a=new RegExp(search,"i")
-                    Booking.find({time:{$regex:a}}).sort({date:-1},(err,result)=>{
+                    Booking.find({time:{$regex:a}}).sort({date:-1}).exec((err,result)=>{
                         if(err){
                             errorConnect()
                         }else{
@@ -62,7 +62,7 @@ module.exports={
         }else if(!isNaN(search)){
             if(search.length<=1){
                 let value=Number(search)
-                Booking.find({chonsan:value}).sort({date:-1},(err,result)=>{
+                Booking.find({chonsan:value}).sort({date:-1}).exec((err,result)=>{
                     if(err){
                         errorConnect()
                     }else{
@@ -72,7 +72,7 @@ module.exports={
             }else{
                 let a=new RegExp(search,"i")
                 console.log(a)
-                Booking.find({phone:{$regex:a}}).sort({date:-1},(err,result)=>{
+                Booking.find({phone:{$regex:a}}).sort({date:-1}).exec((err,result)=>{
                     if(err){
                         errorConnect()
                     }else{

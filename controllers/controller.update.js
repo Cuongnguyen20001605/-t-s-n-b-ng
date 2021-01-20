@@ -13,37 +13,38 @@ module.exports={
           })
      },
      post:async function(req,res){
-          let updateBooking=req.body
-          await Booking.find({
-               date:updateBooking.data,
-               chonsan:updateBooking.chonsan,
-               time:updateBooking.time
-          }).exec((err,result)=>{
-              if(err){
-                    req.flash("error","xin lỗi chưa lấy được dữ liệu")
+          const updateBooking=req.body
+          await Booking.find({date:updateBooking.date,time:updateBooking.time,chonsan:updateBooking.chonsan})
+          .exec((err,result)=>{
+               if(err){
+                    req.flash('error','xin lỗi không load dc data')
                     res.redirect('/')
-              }else{
-                   if(result==0){
-                        Booking.updateOne({
-                             _id:req.query.id},{
-                              name:req.body.name,
-                              phone:req.body.phone,
-                              date:req.body.lichda,
-                              sanbong:req.body.chonsan
-                         }).exec((err)=>{
-                              if(err){
-                                   req.flash("error","xin lỗi dữ liệu chưa dc update")
-                                   res.redirect('/')
-                              }else{
-                                   req.flash("success","bạn đã cập nhật thành công !!!")
-                                   res.redirect('/')
-                              }
-                         })
-                   }else{
-                         req.flash("error",`xin lỗi!!ngày ${updateBooking.lichda.split("-").reverse().join("/")} đã có người chọn sân ${updateUser.chonsan}`)
-                         res.redirect("/")
-                   }
-              }
-         })
+               }
+               if(result!=0){
+                    req.flash('error','xin lỗi thời gian này đã có người đặt')
+                    res.redirect('/')
+               }else{
+                    Booking.updateOne(
+                         {_id:req.query.id},
+                         {
+                              _id:req.query.id,
+                              name:updateBooking.name,
+                              phone:updateBooking.phone,
+                              date:updateBooking.date,
+                              time:updateBooking.time,
+                              chonsan:updateBooking.chonsan     
+                         }
+                    ).exec((err,result)=>{
+                         if(err){
+                              req.flash('error','xin lỗi update không thành công')
+                              res.redirect('/')
+                         }
+                         if(result){
+                              req.flash('success','đã update thành công')
+                              res.redirect('/')
+                         }
+                    })
+               }
+          })
      }
 }
