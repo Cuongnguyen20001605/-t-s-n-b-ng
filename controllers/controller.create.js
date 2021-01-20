@@ -1,5 +1,5 @@
 
-const Booking=require("../models/Booking")
+const {Booking}=require("../models/Booking")
 
 let create={
      get:function(req,res){

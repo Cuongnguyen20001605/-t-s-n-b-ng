@@ -24,5 +24,7 @@ let schemaBooking=new mongoose.Schema({
 });
 
 const Booking=mongoose.model("Booking",schemaBooking)
+const Recycle=mongoose.model("Recycle",schemaBooking)
 
-module.exports=Booking
+module.exports={Booking,Recycle}
+

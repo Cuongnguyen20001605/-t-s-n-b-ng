@@ -1,5 +1,5 @@
 
-const Booking=require("../models/Booking")
+const {Booking}=require("../models/Booking")
 
 module.exports={
      get:async function(req,res){

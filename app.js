@@ -56,14 +56,14 @@ app.use('/',require('./routers/router.home'))
 app.use('/',require("./routers/router.create"))
 
 
-//update user
+//update Booking
 app.use('/',require("./routers/router.update"))
 
-//delete user
-
+//delete booking
 app.use("/",require("./routers/router.delete"))
 
-  
+//recycle booking
+  app.use("/",require("./routers/router.recycle"))
 
 //catch errors router
 app.use(function(req, res, next) {

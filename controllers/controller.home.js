@@ -1,5 +1,5 @@
 
-const Booking=require("../models/Booking")
+const {Booking}=require("../models/Booking")
 
 function errorConnect(){
     req.flash("error","xin lỗi chưa thể connect dc vào Booking")
